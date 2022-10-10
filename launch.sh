@@ -1,6 +1,6 @@
 #!/bin/bash -evx
 xhost +
-ID=${ID:-test}
+ID=test
 docker build . -t docker.discover-lab.com:55555/$ID/client:hw3
 
 # Network and core
