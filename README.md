@@ -20,7 +20,7 @@ git clone https://gitee.com/tb5zhh/is2022-fall-hw3.git
 git clone https://github.com/AIR-DISCOVER/IS2022Fall-hw3.git
 ```
 
-### 补充实现 
+### 修改参数
 
 修改 `cartographer_navigation/param/cartographer_2d_localization.lua` 中的参数配置。
 
@@ -58,6 +58,8 @@ git clone https://github.com/AIR-DISCOVER/IS2022Fall-hw3.git
 ```
 
 执行此命令后，小车移动的轨迹将被记录30秒，这一段时间内可以在上一节的键盘监听窗口中控制小车移动。记录完成后将会调用工具对定位过程的准确性进行评价，并以量化误差和可视化的方式输出。
+
+你需要修改 `cartographer_navigation/param/cartographer_2d_localization.lua` 中的参数配置，使得量化误差尽可能地小。我们已经在工程中提供了这个文件，但是你需要通过修改这个文件进一步提高定位性能、降低量化误差。
 
 量化误差的样例如下：
 
