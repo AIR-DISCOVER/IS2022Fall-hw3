@@ -19,6 +19,7 @@ RUN pip install -i https://pypi.tuna.tsinghua.edu.cn/simple evo --upgrade --no-b
 
 WORKDIR /opt
 RUN rm -rf /opt/ep_ws/src/sim2real_ep/carto_navigation
+ARG CACHE_DATE="tmp"
 ADD cartographer_navigation /opt/ep_ws/src/sim2real_ep/carto_navigation
 WORKDIR /opt/ep_ws
 RUN rm build/CMakeCache.txt && /opt/workspace/devel_isolated/env.sh catkin_make

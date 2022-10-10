@@ -1,7 +1,7 @@
 #!/bin/bash -evx
 xhost +
 ID=test
-docker build . -t docker.discover-lab.com:55555/$ID/client:hw3
+docker build . -t docker.discover-lab.com:55555/$ID/client:hw3 --build-arg CACHE_DATE="$(date +%Y-%m-%d:%H:%M:%S)"
 
 # Network and core
 docker network create net-sim
@@ -9,12 +9,13 @@ docker run -dit --rm --name ros-master --network net-sim \
     ros:noetic-ros-core-focal roscore
 
 # Server
+docker pull docker.discover-lab.com:55555/rmus-2022-fall/sim-headless:hw3
 docker run -dit --rm --name sim-server --network net-sim \
     --gpus all \
     -e ROS_MASTER_URI=http://ros-master:11311 \
     -e LIBGL_ALWAYS_SOFTWARE=1 \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
-    docker.discover-lab.com:55555/rmus-2022-fall/sim-headless
+    docker.discover-lab.com:55555/rmus-2022-fall/sim-headless:hw3
 
 # Visualization
 docker run -dit --rm --name ros-gui --network net-sim \

@@ -5,8 +5,8 @@ docker exec -it client \
     rm output*
 docker exec -it client \
     /opt/ep_ws/devel/env.sh \
-    rosbag record /ep/odom /tf -O output.bag --duration 30
+    rosbag record /odom_gt /ep/odom /tf -O output.bag --duration 15
 echo "Stop recording"
 docker exec -it client \
     /opt/ep_ws/devel/env.sh \
-    evo_rpe bag output.bag /ep/odom /tf:map.base_link -av --t_max_diff 0.05 --plot --plot_mode xy
+    evo_rpe bag output.bag /odom_gt /tf:map.base_link -av --t_max_diff 0.05 --plot --plot_mode xy
