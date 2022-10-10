@@ -14,11 +14,11 @@ RUN sed -i "s@http://.*archive.ubuntu.com@https://mirrors.tuna.tsinghua.edu.cn@g
     rm -rf /var/lib/apt/lists/* && \
     apt-get clean
 
+RUN pip install -i https://pypi.tuna.tsinghua.edu.cn/simple gnupg pycryptodomex
+RUN pip install -i https://pypi.tuna.tsinghua.edu.cn/simple evo --upgrade --no-binary evo
+
 WORKDIR /opt
+RUN rm -rf /opt/ep_ws/src/sim2real_ep/carto_navigation
 ADD cartographer_navigation /opt/ep_ws/src/sim2real_ep/carto_navigation
 WORKDIR /opt/ep_ws
 RUN rm build/CMakeCache.txt && /opt/workspace/devel_isolated/env.sh catkin_make
-
-RUN pip install -i https://pypi.tuna.tsinghua.edu.cn/simple evo --upgrade --no-binary evo
-
-CMD /opt/ep_ws/devel/env.sh roslaunch cartographer_navigation navigation.launch
