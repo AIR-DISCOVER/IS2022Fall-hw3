@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>cartographer_navigation</name>
+  <version>0.0.0</version>
+  <description>The cartographer_navigation package</description>
+  <maintainer email="xxx@todo.todo">xxx</maintainer>
+  <license>TODO</license>
+
+  <build_depend>message_generation</build_depend>
+  <exec_depend>message_runtime</exec_depend>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>cartographer</depend>
+  <depend>cartographer_ros</depend>
+  <depend>cartographer_ros_msgs</depend>
+  <depend>rospy</depend>
+  <depend>std_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <export>
+  </export>
+</package>
+
