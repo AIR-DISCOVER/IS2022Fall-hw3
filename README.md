@@ -6,7 +6,7 @@
 
 本次作业的任务是 EP 小车在环境中的定位，通过 [Cartographer](https://github.com/cartographer-project/cartographer) 工具实现。
 
-Cartographer 是一个进行**实时定位与重建（SLAM）**的工具链，在本次作业中我们只需用到其中的定位部分。
+Cartographer 是一个进行**实时定位与重建（SLAM）**的算法，在本次作业中我们只需用到其中的定位部分。
 
 ## 我要怎样完成这次作业？
 
