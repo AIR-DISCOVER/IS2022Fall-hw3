@@ -1,7 +1,7 @@
 #!/bin/bash -evx
 xhost +
 ID=test
-docker build . -t docker.discover-lab.com:55555/$ID/client:hw3 --build-arg CACHE_DATE="$(date +%Y-%m-%d:%H:%M:%S)"
+docker build . -t docker.discover-lab.com:55555/$ID/client:hw3 --build-arg CACHE_DATE="$(date +%Y-%m-%d:%H:%M:%S)" --network host
 
 # Network and core
 docker network create net-sim
