@@ -10,7 +10,7 @@ docker run -dit --rm --name ros-master --network net-sim \
 
 # Server
 docker pull docker.discover-lab.com:55555/rmus-2022-fall/sim-headless:v4.1.0-hw3
-docker run -dit --name sim-server --network net-sim \
+docker run -dit --rm --name sim-server --network net-sim \
     -e ROS_MASTER_URI="http://ros-master:11311" \
     -e DISPLAY=$DISPLAY \
     -e QT_X11_NO_MITSHM=1 \
